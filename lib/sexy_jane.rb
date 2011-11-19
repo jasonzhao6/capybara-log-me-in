@@ -1,5 +1,3 @@
 require "sexy_jane/version"
-
-module SexyJane
-  # Your code goes here...
-end
+require "sexy_jane/facebook"
+require "sexy_jane/test_user"
