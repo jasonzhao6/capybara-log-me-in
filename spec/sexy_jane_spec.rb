@@ -5,8 +5,8 @@ describe SexyJane::Facebook do
   describe ".connect!" do
     before { SexyJane::Facebook.connect!('123', 'abc') }
     subject { SexyJane::Facebook.connection }
-    specify { subject.api_key.should == '123' }
-    specify { subject.secret.should == 'abc' }
+    its(:api_key) { should == '123' }
+    its(:secret) { should == 'abc' }
   end
 end
 
