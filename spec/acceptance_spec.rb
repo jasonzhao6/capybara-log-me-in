@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'capybara/rspec'
-require 'yaml'
 
 feature "Facebook Test Users", %q{
   In order to test my Facebook canvas appliaction
@@ -10,6 +8,7 @@ feature "Facebook Test Users", %q{
   
   background do
     Capybara.default_driver = :selenium
+    Capybara.default_wait_time = 60
     config = YAML.load_file('spec/test.yml')
     SexyJane::Facebook.connect!(config['api_key'], config['secret'])
   end
@@ -18,10 +17,9 @@ feature "Facebook Test Users", %q{
     SexyJane::TestUser.logged_in do |user|
       visit 'http://www.facebook.com/'
       page.should have_content(user.name)
-      fill_in 'Email Password:', :with => 'hello word'
     end
-    visit 'http://www.facebook.com/'
-    page.should have_content('Sign Up')
+    wait_until { page.has_css?('#pop_content') }
+    page.should have_content('Not Logged In')
   end
 
 end
