@@ -29,9 +29,7 @@ module SexyJane
         
     def method_missing(name)
       key = name.to_s
-      return @test_user[key] if @test_user[key]
-      return @me[key] if @me[key]
-      super
+      @test_user[key] || @me[key] || super
     end
     
     private_class_method :new
