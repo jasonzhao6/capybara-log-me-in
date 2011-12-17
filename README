@@ -1,16 +1,16 @@
-SexyJane is a simple gem. It helps with testing Facebook apps. It does the following:
+SexyJane is a ruby gem that assists with testing Facebook Apps.
 
-1. Open browser, create a new Facebook test user, and log in as that user
-2. Yield to your testing code
-3. At the end of yield, delete the test user it created
+It opens a browser, creates a new Facebook test user, logs in as that user, and then yields control to you, passing you the test user object. The test user object contains everything about the user, such as name, email, password, access_token etc. You can use this setup to do selenium acceptance testing, for example.
 
-The syntax looks like this:
+USAGE:
+
+require 'sexy-jane'
 
 SexyJane::TestUser.logged_in do |user|
-  // Your code starts here
+  // Yield begins
   visit 'http://www.facebook.com/'
   page.should have_content(user.name)
-  // Your code ends here
+  // Yield ends
 end
 
-While yielding, SexyJane passes you a 'user' object containing email, password, first name, last email, etc.
+When yield ends, SexyJane deletes the test user it created. This is due to Facebook limiting the number of test users you can have at a time. SexyJane makes it easy to create new test users and deletes them for you when your test ends.
