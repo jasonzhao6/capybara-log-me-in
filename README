@@ -15,6 +15,6 @@ end
 
 DETAILS:
 
-SexyJane makes use of capabara to interface with the browser. When "TestUser.logged_in" is called, it opens a browser, creates a new Facebook test user, logs in as that user, and then yields control back to you, passing a test user object. This test user object contains everything you would want to know about the user, such as name, email, password, access_token etc. You can then use this test user object to do selenium acceptance testing, for example.
+SexyJane makes use of capabara to interface with the browser. When "TestUser.logged_in" is called, it opens a browser, creates a new Facebook test user, logs in as that user, and then yields control back to you, passing a test user object. This test user object contains everything you would want to know about the user, such as name, email, password, access_token etc. You could use this test user object to do selenium acceptance testing, for example.
 
-When yield ends, SexyJane deletes the test user it had created right away. The reason for always deleting newly created test users is beacuse Facebook limits the number of test users you can have at the same time.
+When the forementioned yield ends, SexyJane deletes the test user it created. The reason for always deleting test users is beacuse Facebook limits the number of test users you can have at the same time.
