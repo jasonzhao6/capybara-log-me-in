@@ -1,6 +1,6 @@
 SexyJane is a ruby gem that assists with testing Facebook Apps.
 
-In short, it creates a new test user for your test and deletes that user when your test ends.
+In short, it creates a new test user for your test, yields control to your test, then deletes that user when your test completes.
 
 USAGE:
 
