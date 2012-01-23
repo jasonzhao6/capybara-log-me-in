@@ -1,6 +1,6 @@
-SexyJane is a ruby gem that assists with testing Facebook Apps.
+SexyJane is a handy assistant when testing Facebook Apps with Capybara.
 
-In short, it creates a new test user, yields control to your test, then deletes the test user when your test completes.
+She opens the browser, creates a new test user, yields control to your Capybara test, and then deletes the test user when you are done.
 
 USAGE:
 
@@ -15,6 +15,8 @@ end
 
 DETAILS:
 
-SexyJane makes use of capabara to interface with the browser. When "TestUser.logged_in" is called, it opens a browser, creates a new Facebook test user, logs in as that user, and then yields control back to you, passing a test user object. This test user object contains everything you would want to know about the user, such as name, email, password, access_token etc. You could use this test user object to do selenium acceptance testing, for example.
+SexyJane uses Caybara herself.
 
-When the forementioned yield ends, SexyJane deletes the test user it created. The reason for always deleting test users is beacuse Facebook limits the number of test users you can have at the same time.
+The |user| object yielded to you contains the following fields: id, access_token, login_url, email, password, name, first_name, middle_name, last_name, link, gender, locale, updated_time.
+
+SexyJane is adament about deleting the test users she creates. The reason is beacuse Facebook limits the number of test users you can have.
