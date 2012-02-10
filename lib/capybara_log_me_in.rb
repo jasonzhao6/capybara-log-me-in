@@ -1,3 +1,3 @@
-require "sexy_jane/version"
-require "sexy_jane/facebook"
-require "sexy_jane/test_user"
+require "capybara_log_me_in/version"
+require "capybara_log_me_in/facebook"
+require "capybara_log_me_in/test_user"

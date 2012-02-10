@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'sexy_jane'
+require 'capybara_log_me_in'
 require 'capybara/rspec'
 require 'yaml'
 require 'vcr'
