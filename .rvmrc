@@ -1,1 +1,1 @@
-rvm use 1.9.3@sexy-jane --create
+rvm use 1.9.3@capybara-log-me-in --create
