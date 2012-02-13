@@ -1,5 +1,4 @@
 require 'koala'
-require 'capybara'
 
 module Capybara
   class LogMeIn

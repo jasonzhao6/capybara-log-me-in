@@ -22,5 +22,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'vcr'
   s.add_development_dependency 'fakeweb'
   s.add_runtime_dependency 'koala'
+  s.add_runtime_dependency 'twitter'
   s.add_runtime_dependency 'capybara'
 end

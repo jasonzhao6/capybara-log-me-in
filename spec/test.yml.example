@@ -1,2 +1,6 @@
-api_key: 123
-secret: abc
+facebook:
+  api_key: 123
+  secret: abc
+twitter:
+  username: 123
+  password: abc

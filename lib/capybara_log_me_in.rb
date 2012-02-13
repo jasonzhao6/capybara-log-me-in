@@ -1,7 +1,6 @@
 require "capybara_log_me_in/version"
-# require "capybara_log_me_in/facebook"
-# require "capybara_log_me_in/twitter"
-require 'koala'
+require "capybara_log_me_in/facebook"
+require "capybara_log_me_in/twitter"
 require 'capybara'
 
 module Capybara

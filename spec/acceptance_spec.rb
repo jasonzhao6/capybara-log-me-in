@@ -15,6 +15,7 @@ feature 'Test Users', %q{
   
   scenario 'logging in with Facebook' do
     Capybara::LogMeIn.to :facebook do |user|
+      user.access_token.should be
       visit 'http://www.facebook.com/'
       page.should have_content(user.name)
     end
@@ -25,12 +26,13 @@ feature 'Test Users', %q{
 
   scenario 'logging in with Twitter' do
     Capybara::LogMeIn.to :twitter do |user|
+      user.name.should be
       visit 'http://twitter.com/'
-      page.should have_content(user.name)
+      page.should have_content(user.username)
     end
     
     visit 'http://twitter.com/'
-    page.should have_content('Log In')
+    page.should have_content('Sign in')
   end
 
 end
