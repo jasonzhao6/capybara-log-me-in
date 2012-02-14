@@ -16,6 +16,8 @@ module Capybara
         Capybara.fill_in 'session[username_or_email]', :with => @me['username']
         Capybara.fill_in 'session[password]', :with => @me['password']
         Capybara.click_button 'Sign in'
+        Capybara.visit 'https://twitter.com/settings/applications'
+        Capybara.all('.revoke').each &:click
       end
 
       def method_missing(name)
