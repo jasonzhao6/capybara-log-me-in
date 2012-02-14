@@ -8,6 +8,7 @@ feature 'Test Users', %q{
   
   background do
     Capybara.default_driver = :selenium
+    Capybara.default_wait_time = 10
     config = YAML.load_file('spec/test.yml')
     Capybara::LogMeIn.config :facebook, { api_key:  config['facebook']['api_key'],   secret: config['facebook']['secret'] }
     Capybara::LogMeIn.config :twitter,  { username: config['twitter']['username'], password: config['twitter']['password'] }
