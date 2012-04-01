@@ -1,7 +1,9 @@
-# LogMeIn
-LogMeIn is a handy assistant when testing third party providers (e.g. Facebook or Twitter) with Capybara.
+# Capybara::LogMeIn
+LogMeIn is a handy assistant that logs into your app with a Facebook or Twitter test account. It's useful when writing Capybara-based browser tests.
 
-LogMeIn opens the browser, creates or users a test user, yields control to your Capybara test, and then unauthorized or deletes the test user when you are done.
+Wrap your test code in its block, it will open the browser, create a test user, yield control to your code, and then delete the test user.
+
+It creates/deletes a new test user each time for Facebook, but because Twitter doesn't offer such an API, for Twitter, it authorizes/deauthorizes app permission with the same user each time.
 
 ## Usage
 ```ruby
@@ -16,11 +18,3 @@ Capybara::LogMeIn.to :facebook do |user|
   // Yield ends
 end
 ```
-
-## Details
-
-LogMeIn uses Capybara herself.
-
-The |user| object yielded to you contains the following fields from the third party provider (e.g. Facebook: id, access_token, login_url, email, password, name, first_name, middle_name, last_name, link, gender, locale, updated_time).
-
-If possible LogMeIn will delete the test users she creates because Facebook limits the number of test users you can have.
